@@ -1,0 +1,17 @@
+---
+ - name: installing ntp package
+   hosts: all
+   become: yes
+   tasks: 
+   - name: install ntp
+     apt:
+       name: nginx
+       update_cache: yes
+       state: present 
+     when: ansible_os_family == "Debian"
+   - name: install ntp in redhat
+     yum: 
+       name: nginx
+       state: present
+     when: ansible_os_family == "RedHat"
+
