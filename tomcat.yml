@@ -1,6 +1,0 @@
----
-- name: tomcat installation
-  hosts: redhat
-  become: yes
-  roles: 
-   - apachetomcat
